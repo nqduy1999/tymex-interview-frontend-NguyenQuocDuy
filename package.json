@@ -1,0 +1,26 @@
+{
+  "name": "monorepo-delivery-food",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "turbo run dev --parallel",
+    "build": "turbo run build",
+    "lint": "turbo run lint",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+  },
+  "nohoist": [
+    "**/typeorm/**",
+    "**/typeorm"
+  ],
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "workspaces": [
+    "apps/server",
+    "apps/client"
+  ],
+  "dependencies": {
+    "@commitlint/config-conventional": "^19.2.2"
+  }
+}

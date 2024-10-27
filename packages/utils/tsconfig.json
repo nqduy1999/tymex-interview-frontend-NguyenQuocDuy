@@ -1,0 +1,6 @@
+{
+  "extends": "@food-delivery/tsconfig/tsconfig.base.json", // Extend the config options from the root,
+  "compilerOptions": {
+    "esModuleInterop": true
+  }
+}
