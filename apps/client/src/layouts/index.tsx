@@ -1,11 +1,12 @@
-import { Header } from '@client/components/mocules'
+import { Footer, Header } from '@client/components/mocules'
 import { Outlet } from 'react-router-dom'
 
 const GeneralLayout = () => {
   return (
-    <div className="">
+    <div className="w-full">
       <Header />
       <Outlet />
+      <Footer />
     </div>
   )
 }

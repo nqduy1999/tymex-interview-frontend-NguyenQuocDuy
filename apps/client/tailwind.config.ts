@@ -1,4 +1,5 @@
 import type { Config } from 'tailwindcss'
+import { themeTailwindColor } from './src/themes'
 
 const config: Config = {
   content: [
@@ -7,7 +8,9 @@ const config: Config = {
     './src/layouts/**/*.{js,ts,jsx,tsx,mdx}'
   ],
   theme: {
-    extend: {}
+    extend: {
+      colors: themeTailwindColor
+    }
   }
 }
 

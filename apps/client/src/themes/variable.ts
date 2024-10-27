@@ -1,3 +1,3 @@
 export const variablesConfig = {
-  '@primary-color': '#4377FE'
+  '@black': '#17161A'
 }
