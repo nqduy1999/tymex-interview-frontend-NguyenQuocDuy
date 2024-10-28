@@ -7,10 +7,12 @@ import vitePluginImp from 'vite-plugin-imp'
 import { variablesConfig } from './src/themes/variable'
 import { defineConfig, PluginOption } from 'vite'
 import react from '@vitejs/plugin-react'
+import tsconfigPaths from 'vite-tsconfig-paths'
 
 export default defineConfig({
   plugins: [
     react(),
+    tsconfigPaths(),
     vitePluginImp({
       libList: [
         {

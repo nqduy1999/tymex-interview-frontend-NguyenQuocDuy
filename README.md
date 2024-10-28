@@ -1,2 +1,3 @@
-Tyme assignment
+## Tyme assignment
 
+# Installation
