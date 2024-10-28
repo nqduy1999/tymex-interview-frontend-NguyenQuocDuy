@@ -4,16 +4,18 @@
   "globalDependencies": ["**/.env.*local"],
   "tasks": {
     "build": {
-      "env": ["BIG", "LIST", "OF", "ENV", "VARS"],
       "dependsOn": ["^build"],
-      "outputs": [".next/**", "!.next/cache/**"]
+      "outputs": ["dist/**", ".next/**"]
+    },
+    "test": {
+      "dependsOn": ["^build"],
+      "outputs": ["coverage/**"]
     },
     "lint": {
-      "dependsOn": ["^lint"]
+      "outputs": []
     },
     "dev": {
-      "cache": false,
-      "persistent": true
+      "cache": false
     }
   }
 }

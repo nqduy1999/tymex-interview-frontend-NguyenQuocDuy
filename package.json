@@ -1,8 +1,9 @@
 {
-  "name": "monorepo-delivery-food",
+  "name": "tymex-monorepo",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "author": "DuyNguyenQuoc",
+  "license": "ISC",
   "private": true,
   "workspaces": [
     "apps/*",
@@ -11,22 +12,31 @@
   "scripts": {
     "dev": "turbo run dev --parallel",
     "build": "turbo run build",
+    "test": "turbo run test",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "pre-commit": "lint-staged"
+    "prepare": "husky install"
   },
   "nohoist": [
     "**/typeorm/**",
     "**/typeorm"
   ],
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "@commitlint/config-conventional": "^19.2.2"
+  "packageManager": "npm@9.8.1",
+  "lint-staged": {
+    "apps/**/*.{js,ts,jsx,tsx}": [
+      "eslint --fix"
+    ],
+    "packages/ui/**/*.{js,ts,jsx,tsx}": [
+      "eslint --fix"
+    ],
+    "*.json": [
+      "prettier --write"
+    ]
   },
-  "packageManager": "pnpm@9.12.0",
   "devDependencies": {
-    "husky": "^9.1.6"
+    "husky": "^9.1.6",
+    "lint-staged": "^15.2.10",
+    "prettier": "^3.3.3",
+    "@commitlint/config-conventional": "^19.2.2"
   }
 }
