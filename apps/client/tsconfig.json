@@ -1,5 +1,12 @@
 {
   "extends": "@tymex-interview/tsconfig/tsconfig.base.json",
-  "include": [".prettierrc.cjs", ".eslintrc.cjs", "src"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "include": ["src"],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "test",
+    "**/*.test.ts",
+    "**/*.spec.ts",
+    ".turbo"
+  ]
 }
