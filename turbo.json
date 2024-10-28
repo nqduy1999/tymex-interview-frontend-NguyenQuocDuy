@@ -4,30 +4,17 @@
   "globalDependencies": ["**/.env.*local"],
   "tasks": {
     "build": {
-      "dependsOn": ["^db:generate", "^db:migrate:deploy", "^build"],
-      "outputs": ["dist/**"]
+      "dependsOn": ["^build"],
+      "outputs": ["dist/**", ".next/**"]
     },
-    "db:migrate:deploy": {},
-    "db:migrate:dev": {},
-    "db:seed": {},
-    "db:generate": {
-      "cache": false
-    },
-    "db:push": {
-      "cache": false
+    "test": {
+      "dependsOn": ["^build"],
+      "outputs": ["coverage/**"]
     },
     "lint": {
-      "cache": false
-    },
-    "check-types": {
-      "cache": false
+      "outputs": []
     },
     "dev": {
-      "dependsOn": ["^db:generate"],
-      "cache": false,
-      "persistent": true
-    },
-    "clean": {
       "cache": false
     }
   }

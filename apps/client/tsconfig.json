@@ -1,6 +1,12 @@
 {
   "extends": "@tymex-interview/tsconfig/tsconfig.base.json",
-  "include": ["src"],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@client/*": ["src/*"]
+    }
+  },
+  "include": ["**/*.ts", "**/*.tsx"],
   "exclude": [
     "node_modules",
     "dist",
