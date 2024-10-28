@@ -4,7 +4,7 @@
 import { resolve } from 'path'
 import vitePluginImp from 'vite-plugin-imp'
 
-// import { variablesConfig } from './src/themes/variable'
+import { variablesConfig } from './src/themes/variable'
 import { defineConfig, PluginOption } from 'vite'
 import react from '@vitejs/plugin-react'
 
@@ -20,17 +20,17 @@ export default defineConfig({
       ]
     })
   ] as PluginOption[],
-  // css: {
-  //   modules: {
-  //     scopeBehaviour: 'local'
-  //   },
-  //   preprocessorOptions: {
-  //     less: {
-  //       javascriptEnabled: true,
-  //       modifyVars: variablesConfig
-  //     }
-  //   }
-  // },
+  css: {
+    modules: {
+      scopeBehaviour: 'local'
+    },
+    preprocessorOptions: {
+      less: {
+        javascriptEnabled: true,
+        modifyVars: variablesConfig
+      }
+    }
+  },
   resolve: {
     alias: [{ find: '@client', replacement: resolve(__dirname, 'src') }]
   },

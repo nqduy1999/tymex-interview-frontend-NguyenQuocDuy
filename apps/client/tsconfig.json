@@ -1,8 +1,5 @@
 {
   "extends": "@tymex-interview/tsconfig/tsconfig.base.json",
-  "compilerOptions": {
-    "noEmit": false, // Ensure TypeScript can emit files
-    "declaration": true // or false, based on your need for .d.ts files,
-  },
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "include": ["src"],
+  "exclude": ["node_modules", "dist", "test", "**/*.test.ts", "**/*.spec.ts"]
 }
