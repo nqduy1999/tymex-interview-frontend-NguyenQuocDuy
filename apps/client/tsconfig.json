@@ -1,5 +1,8 @@
 {
   "extends": "@tymex-interview/tsconfig/tsconfig.base.json",
-  "include": [".prettierrc.cjs", ".eslintrc.cjs", "src"],
+  "compilerOptions": {
+    "noEmit": false, // Ensure TypeScript can emit files
+    "declaration": true // or false, based on your need for .d.ts files,
+  },
   "references": [{ "path": "./tsconfig.node.json" }]
 }
