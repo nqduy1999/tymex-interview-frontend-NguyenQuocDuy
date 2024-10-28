@@ -17,10 +17,10 @@
   "author": "",
   "license": "ISC",
   "workspaces": [
-    "apps/server",
     "apps/client"
   ],
   "dependencies": {
     "@commitlint/config-conventional": "^19.2.2"
-  }
+  },
+  "packageManager": "pnpm@9.12.0"
 }
