@@ -21,6 +21,7 @@ body {
   margin: 0px !important;
   color: white;
   font-family: 'Infer';
+  height: 100vh;
 }
 
 .font-drone-ranger {
@@ -41,6 +42,5 @@ body {
 
 .container_fluid {
   width: 100%;
-  background-color: $neutral-color;
   max-width: 1920px;
 }

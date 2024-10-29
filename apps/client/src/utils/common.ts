@@ -10,18 +10,21 @@ export const loadable = (loader: () => any) =>
     ).then(loader),
   )
 
-export const getTokens = (path: string) => {
-  const raws = fs.readFileSync(path, 'utf8')
-  let obj = {}
-  raws
-    .split('\n') // get line by line
-    .filter(line => line.length > 0 && !line.startsWith('//')) // check if line is comment remove it
-    .map(line => {
-      const [key, value] = line.split(':')
-      obj = Object.assign(obj, {
-        [key.replace('$', '')]: value.replace(';', ',').trim(),
-      })
-      return line
-    })
-  return obj
+export const debounce = <T extends (...args: unknown[]) => void>(
+  fn: T,
+  delay: number,
+): ((this: ThisParameterType<T>, ...args: Parameters<T>) => void) => {
+  let timeoutId: ReturnType<typeof setTimeout>
+
+  function debouncedFunction(
+    this: ThisParameterType<T>,
+    ...args: Parameters<T>
+  ) {
+    clearTimeout(timeoutId)
+    timeoutId = setTimeout(() => {
+      fn.apply(this, args)
+    }, delay)
+  }
+
+  return debouncedFunction
 }

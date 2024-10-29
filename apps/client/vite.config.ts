@@ -15,7 +15,7 @@ export default defineConfig({
   css: {
     modules: {
       scopeBehaviour: 'local',
-      localsConvention: 'camelCaseOnly',
+      localsConvention: 'dashes',
     },
     preprocessorOptions: {
       scss: {
