@@ -2,9 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  @font-face {
+    font-family: 'Infer';
+    src: url('../fonts/Inter/Inter-VariableFont_opsz,wght.ttf');
+  }
+}
+
 @font-face {
-  font-family: 'Infer';
-  src: url('../fonts/Inter/Inter-VariableFont_opsz,wght.ttf');
+  font-family: 'DroneRangerPro';
+  src: url('../fonts/DroneRangerPro/DroneRangerPro-VariableFont_opsz\,wght.ttf');
 }
 
 :root {
