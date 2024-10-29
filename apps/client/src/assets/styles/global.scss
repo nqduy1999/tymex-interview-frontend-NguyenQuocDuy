@@ -1,12 +1,8 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import './vars.scss';
 
-@layer base {
-  @font-face {
-    font-family: 'Infer';
-    src: url('../fonts/Inter/Inter-VariableFont_opsz,wght.ttf');
-  }
+@font-face {
+  font-family: 'Infer';
+  src: url('../fonts/Inter/Inter-VariableFont_opsz,wght.ttf');
 }
 
 @font-face {
@@ -22,5 +18,29 @@
 }
 
 body {
+  margin: 0px !important;
   color: white;
+  font-family: 'Infer';
+  height: 100vh;
+}
+
+.font-drone-ranger {
+  font-family: 'DroneRangerPro';
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.lowercase {
+  text-transform: lowercase;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.container_fluid {
+  width: 100%;
+  max-width: 1920px;
 }
