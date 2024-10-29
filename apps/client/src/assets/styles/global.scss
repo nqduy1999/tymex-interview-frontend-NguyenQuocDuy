@@ -1,3 +1,5 @@
+@import './vars.scss';
+
 @font-face {
   font-family: 'Infer';
   src: url('../fonts/Inter/Inter-VariableFont_opsz,wght.ttf');
@@ -16,6 +18,7 @@
 }
 
 body {
+  margin: 0px !important;
   color: white;
   font-family: 'Infer';
 }
@@ -30,4 +33,14 @@ body {
 
 .lowercase {
   text-transform: lowercase;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.container_fluid {
+  width: 100%;
+  background-color: $neutral-color;
+  max-width: 1920px;
 }

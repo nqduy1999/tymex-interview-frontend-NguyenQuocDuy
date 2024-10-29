@@ -2,14 +2,19 @@ import { Link } from 'react-router-dom'
 import { navigationData } from './const'
 import { Typography } from 'antd'
 
+import footerModule from './Footer.module.scss'
+import cn from 'classnames'
+
+const { Title } = Typography
+
 const Footer = () => {
   return (
-    <div className="w-full max-w-[1920px] bg-neutral p-16 pb-[12rem]">
+    <div className={cn(footerModule.container, 'container_fluid')}>
       <div className="flex justify-between gap-4">
         <div className="flex flex-col">
-          <Typography.Title className="font-drone-ranger uppercase" level={5}>
+          <Title level={4} className="font-drone-ranger uppercase">
             Navigation
-          </Typography.Title>
+          </Title>
           <div className="grid grid-cols-3">
             {navigationData.map(navData => (
               <Link

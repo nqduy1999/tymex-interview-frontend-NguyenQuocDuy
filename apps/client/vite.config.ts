@@ -8,11 +8,19 @@ import react from '@vitejs/plugin-react'
 import tsconfigPaths from 'vite-tsconfig-paths'
 
 export default defineConfig({
-  plugins: [react(), tsconfigPaths()] as PluginOption[],
+  build: {
+    sourcemap: true, // only set true when work with dev mode
+  },
+  plugins: [react(), tsconfigPaths()],
   css: {
     modules: {
       scopeBehaviour: 'local',
       localsConvention: 'camelCaseOnly',
+    },
+    preprocessorOptions: {
+      scss: {
+        api: 'modern-compiler',
+      },
     },
   },
   resolve: {
