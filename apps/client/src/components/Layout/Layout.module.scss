@@ -1,0 +1,19 @@
+.layout_container {
+  padding-top: 80px;
+  width: 100%;
+  position: relative;
+}
+
+.layout_content {
+  min-height: 60vh;
+}
+
+.background_main_overlay {
+  background: url('../../assets/images/general/background.png');
+  background-repeat: repeat;
+  background-size: cover;
+  background-origin: content-box;
+  background-position: center;
+  background-attachment: fixed;
+  width: 100%;
+}

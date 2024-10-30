@@ -2,18 +2,18 @@ import {
   createBrowserRouter,
   createRoutesFromElements,
   Route,
-  RouterProvider
+  RouterProvider,
 } from 'react-router-dom'
 import { routes } from '@client/routes/routeConfig'
 import { Suspense } from 'react'
-import GeneralLayout from '@client/layouts'
-import { LazyLoad } from '@client/components/atom'
+import GeneralLayout from '@client/components/Layout'
+import { LazyLoad } from '@client/components/common'
 
 const Routes = () => {
   const router = createBrowserRouter(
     createRoutesFromElements([
       <Route element={<GeneralLayout />}>
-        {routes.map((route) => (
+        {routes.map(route => (
           <Route
             key={route.path}
             path={route.path}
@@ -22,8 +22,8 @@ const Routes = () => {
             }
           />
         ))}
-      </Route>
-    ])
+      </Route>,
+    ]),
   )
 
   return <RouterProvider router={router} />

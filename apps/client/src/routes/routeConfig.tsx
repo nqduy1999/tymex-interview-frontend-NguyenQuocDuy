@@ -1,10 +1,11 @@
 import { RouteObject } from 'react-router-dom'
 import { routeString } from './routeString'
-import { loadable } from '@client/utils/common'
+// import { loadable } from '@client/utils/common'
+import { lazy } from 'react'
 
-const HomePage = loadable(() => import('@client/components/pages/Home.Page'))
-const NotFoundPage = loadable(
-  () => import('@client/components/pages/NotFound.Page'),
+const HomePage = lazy(() => import('@client/features/Home/Home.Page'))
+const NotFoundPage = lazy(
+  () => import('@client/features/NotFound/NotFound.Page'),
 )
 
 export const routes: RouteObject[] = [
