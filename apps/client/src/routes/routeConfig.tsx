@@ -2,9 +2,9 @@ import { RouteObject } from 'react-router-dom'
 import { routeString } from './routeString'
 import { loadable } from '@client/utils/common'
 
-const HomePage = loadable(() => import('@client/components/pages/Home.Page'))
+const HomePage = loadable(() => import('@client/features/Home/Home.Page'))
 const NotFoundPage = loadable(
-  () => import('@client/components/pages/NotFound.Page'),
+  () => import('@client/features/NotFound/NotFound.Page'),
 )
 
 export const routes: RouteObject[] = [

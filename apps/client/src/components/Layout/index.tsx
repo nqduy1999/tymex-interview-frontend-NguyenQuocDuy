@@ -1,5 +1,6 @@
-import { Footer, Header } from '@client/components/mocules'
 import { Outlet } from 'react-router-dom'
+import Header from './Header'
+import Footer from './Footer/Footer'
 
 const GeneralLayout = () => {
   return (
