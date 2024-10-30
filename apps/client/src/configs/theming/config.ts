@@ -32,5 +32,8 @@ export const themeConfig: ThemeConfig = {
       colorBgBase: 'white',
       colorTextPlaceholder: '#89888B',
     },
+    Result: {
+      colorTextDescription: 'white',
+    },
   },
 }

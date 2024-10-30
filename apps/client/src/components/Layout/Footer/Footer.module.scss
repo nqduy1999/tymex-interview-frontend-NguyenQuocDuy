@@ -1,9 +1,13 @@
 @import '@client/assets/styles/vars.scss';
 
 .footer_container {
-  background-color: $neutral-color;
+  .footer_wave {
+    width: 100%;
+  }
   .footer_content {
-    padding: 64px 64px 200px 64px;
+    background-color: $neutral-color;
+    position: relative;
+    padding: 24px 64px 48px 64px;
     @media screen and (max-width: 996px) {
       padding: 12px 24px;
     }
