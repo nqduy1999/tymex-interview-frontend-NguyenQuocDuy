@@ -1,5 +1,6 @@
 import React from 'react'
 
+// Custom loading React + lazy + setTimeout
 export const loadable = (loader: () => any) =>
   React.lazy(() =>
     new Promise<void>(resolve =>
@@ -9,6 +10,7 @@ export const loadable = (loader: () => any) =>
     ).then(loader),
   )
 
+// Custom debounce function
 export const debounce = <T extends (...args: unknown[]) => void>(
   fn: T,
   delay: number,
