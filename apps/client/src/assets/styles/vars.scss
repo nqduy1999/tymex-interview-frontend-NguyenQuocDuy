@@ -6,7 +6,7 @@ $font-size-lg: 18px;
 $font-size-xs: 12px;
 
 // Colors
-$primary-color: white;
+$primary-color: linear-gradient(91deg, #da458f -6%, #da34dd 113.05%);
 $neutral-color: #17161a;
 $neutral2-color: #3a3841;
 $normal-color: white;
@@ -15,7 +15,3 @@ $background-color: #15171d;
 // Radius
 $border-radius-base: 6px;
 $border-radius-sm: 4px;
-
-:root {
-  --primary-color: $primary-color;
-}
