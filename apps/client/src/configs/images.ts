@@ -1,6 +1,8 @@
 import phoneSvg from '@client/assets/images/icons/phone.svg'
 import emailSvg from '@client/assets/images/icons/message.svg'
 import menu from '@client/assets/images/icons/menu.png'
+import closeMenu from '@client/assets/images/icons/close-menu.png'
+
 import globe from '@client/assets/images/icons/globe.svg'
 import chevronDown from '@client/assets/images/icons/chevron-down.svg'
 
@@ -14,6 +16,7 @@ export const IMAGES_CONST = {
     phone: phoneSvg,
     email: emailSvg,
     menu,
+    closeMenu,
     globe,
     chevronDown,
   },

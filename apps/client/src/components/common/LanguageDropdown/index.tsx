@@ -22,6 +22,7 @@ const LanguageDropdown = () => {
           src={IMAGES_CONST.icons.globe}
           alt={IMAGES_CONST.icons.globe.toString()}
           width={24}
+          preview={false}
         />
       </Select.Option>
     </Select>
