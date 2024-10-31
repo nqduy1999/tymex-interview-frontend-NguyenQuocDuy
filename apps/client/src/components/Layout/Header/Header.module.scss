@@ -1,9 +1,67 @@
-@import '@client/assets/styles/vars.scss';
+@use '@client/assets/styles/mixins.scss' as *;
+@use '@client/assets/styles/vars' as *;
 
 .header_container {
-  padding: 32px 160px;
   position: fixed;
-  background: rgba(23, 22, 26, 0.7);
   top: 0;
   width: 100%;
+  z-index: 10;
+}
+.header_content {
+  padding: 22px 160px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 40px;
+  background: rgba(23, 22, 26, 0.7);
+}
+.header_navigation {
+  display: flex;
+  gap: 60px;
+
+  &_item {
+    text-transform: uppercase;
+    font-size: 14px;
+    font-family: 'DroneRangerPro';
+    transition: all 0.5s;
+    position: relative;
+
+    &--active {
+      @include text-gradient-primary;
+      &::before {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        width: 40% !important;
+        height: 2px;
+        background: $primary-color;
+      }
+    }
+    &:hover {
+      @include text-gradient-primary;
+      &::before {
+        width: 40%;
+      }
+    }
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 0%;
+      height: 2px;
+      background: $primary-color;
+      transition: all 0.5s;
+    }
+  }
+}
+
+.header_action {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  &_title {
+    margin: 0px !important;
+  }
 }

@@ -19,6 +19,8 @@ export const themeConfig: ThemeConfig = {
       borderRadius: 4,
       borderRadiusLG: 4,
       fontSize: 16,
+      defaultBg: 'transparent',
+      defaultBorderColor: 'transparent',
     },
     Typography: {
       fontFamily: 'Infer',
@@ -34,6 +36,11 @@ export const themeConfig: ThemeConfig = {
     },
     Result: {
       colorTextDescription: 'white',
+    },
+    Select: {
+      colorBgContainer: 'transparent',
+      borderRadius: 4,
+      activeOutlineColor: 'transparent',
     },
   },
 }

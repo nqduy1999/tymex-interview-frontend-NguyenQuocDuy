@@ -1,4 +1,4 @@
-@import '@client/assets/styles/vars.scss';
+@use '@client/assets/styles/vars' as *;
 
 .footer_container {
   .footer_wave {
