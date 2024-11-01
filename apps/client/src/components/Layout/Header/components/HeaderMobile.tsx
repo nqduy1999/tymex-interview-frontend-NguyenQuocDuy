@@ -24,7 +24,7 @@ const HeaderMobile = () => {
     <>
       <Button
         className={headerModule.header_action_mobile}
-        type="default"
+        variant="outlined"
         onClick={onOpenDrawer}
       >
         <Image

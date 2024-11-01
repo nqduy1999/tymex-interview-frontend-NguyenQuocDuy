@@ -1,0 +1,11 @@
+.filter_product {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.filter_product_search {
+  margin-bottom: 64px;
+  .ant-input {
+    border-left: 0px !important;
+  }
+}

@@ -1,0 +1,33 @@
+.card_product {
+  &_item {
+    position: relative;
+    display: flex;
+    gap: 24px;
+    flex-direction: column;
+    padding: 16px;
+    background-color: rgba(58, 56, 65, 0.6);
+    border-radius: 10px;
+
+    &_header {
+      position: relative;
+      height: 234px;
+      &_background {
+        width: 100%;
+        min-height: 234px;
+        border-radius: 4px;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+      }
+      &_character {
+        width: 100% !important;
+        max-width: 235px;
+      }
+    }
+    &_content {
+      display: flex;
+      gap: 16px;
+      flex-direction: column;
+    }
+  }
+}

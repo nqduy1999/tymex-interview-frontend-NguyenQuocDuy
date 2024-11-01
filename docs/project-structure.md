@@ -50,6 +50,8 @@ src/features/awesome-feature
 |
 +-- stores      # state stores for a specific feature
 |
++-- styles      # custom style for a specific feature pages
+|
 +-- types       # typescript types for TS specific feature domain
 |
 +-- utils       # utility functions for a specific feature

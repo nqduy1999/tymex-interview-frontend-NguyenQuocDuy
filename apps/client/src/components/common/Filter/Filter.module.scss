@@ -1,0 +1,19 @@
+.filter_container {
+  display: flex;
+  gap: 24px;
+  flex-direction: column;
+  &_action {
+    display: flex;
+    gap: 36px;
+    align-items: center;
+    justify-content: space-between;
+    &_reset {
+      padding-left: 0px;
+      background: transparent !important;
+    }
+    &_submit {
+      min-width: 128px;
+      height: 44px !important;
+    }
+  }
+}

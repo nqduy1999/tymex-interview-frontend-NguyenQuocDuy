@@ -8,7 +8,7 @@
   z-index: 10;
 }
 .header_content {
-  padding: 22px 120px;
+  padding: 22px 80px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -80,6 +80,8 @@
   padding: 0px !important;
   position: absolute;
   right: 12px;
+  background: transparent !important;
+  outline: none !important;
 }
 
 .header_content_mobile {

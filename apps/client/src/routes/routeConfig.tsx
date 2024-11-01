@@ -2,15 +2,18 @@ import { RouteObject } from 'react-router-dom'
 import { routeString } from './routeString'
 import { loadable } from '@client/utils/common'
 
-const HomePage = loadable(() => import('@client/features/Home/Home.Page'))
-const NotFoundPage = loadable(
-  () => import('@client/features/NotFound/NotFound.Page'),
-)
+const HomeRoutes = loadable(() => import('@client/features/Home'))
+const NotFoundPage = loadable(() => import('@client/features/NotFound'))
+const MarketPlaceRoutes = loadable(() => import('@client/features/Products'))
 
 export const routes: RouteObject[] = [
   {
-    element: <HomePage />,
+    element: <HomeRoutes />,
     path: routeString.HOME,
+  },
+  {
+    element: <MarketPlaceRoutes />,
+    path: routeString.PRODUCT.root,
   },
   {
     element: <NotFoundPage />,
