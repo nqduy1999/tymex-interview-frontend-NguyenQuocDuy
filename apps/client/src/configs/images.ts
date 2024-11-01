@@ -6,6 +6,8 @@ import closeMenu from '@client/assets/images/icons/close-menu.png'
 import resetFilter from '@client/assets/images/icons/reset-filter.svg'
 import search from '@client/assets/images/icons/search.png'
 import globe from '@client/assets/images/icons/globe.svg'
+import etherium from '@client/assets/images/icons/etherium.svg'
+
 import chevronDown from '@client/assets/images/icons/chevron-down.svg'
 
 import generalBackground from '@client/assets/images/general/background.png'
@@ -18,6 +20,12 @@ import basketballGirl from '@client/assets/images/products/characters/basketball
 import theDjText from '@client/assets/images/products/characters/the-dj-text.svg'
 import theDj from '@client/assets/images/products/characters/the-dj.png'
 import newArrival from '@client/assets/images/products/new_arrival.webp'
+
+import character1 from '@client/assets/images/products/_mock/character_1.png'
+import character2 from '@client/assets/images/products/_mock/character_2.png'
+import character3 from '@client/assets/images/products/_mock/character_3.png'
+import character4 from '@client/assets/images/products/_mock/character_4.png'
+import character5 from '@client/assets/images/products/_mock/character_5.png'
 
 export const IMAGES_CONST = {
   generalBackground,
@@ -33,6 +41,13 @@ export const IMAGES_CONST = {
       theDjText,
       theDj,
     },
+    mockCharacter: {
+      character1,
+      character2,
+      character3,
+      character4,
+      character5,
+    },
   },
   icons: {
     search,
@@ -43,5 +58,6 @@ export const IMAGES_CONST = {
     globe,
     chevronDown,
     resetFilter,
+    etherium,
   },
 }

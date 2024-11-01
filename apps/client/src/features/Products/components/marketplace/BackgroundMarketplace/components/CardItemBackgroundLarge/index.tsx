@@ -8,7 +8,7 @@ const configMotion = {
   initial: {
     opacity: 0,
     translateX: 0,
-    translateY: 200,
+    translateY: 0,
   },
   animate: {
     opacity: 1,

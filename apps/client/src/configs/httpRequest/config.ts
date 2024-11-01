@@ -1,0 +1,16 @@
+const MAX_RETRY_HTTP = 1
+
+const ERROR_CODES = {
+  UNAUTHORIZED: 401,
+  TOO_MANY_REQUEST: 429,
+  SERVICE_UNAVAILABLE: 503,
+  SERVER_ERROR: 500,
+}
+
+const TIMEOUT_RETRY = 500
+
+export const httpClientConfig = Object.freeze({
+  MAX_RETRY_HTTP,
+  ERROR_CODES,
+  TIMEOUT_RETRY,
+})

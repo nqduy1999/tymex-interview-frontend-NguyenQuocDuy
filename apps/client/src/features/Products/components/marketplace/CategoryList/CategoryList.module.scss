@@ -1,0 +1,33 @@
+.category_container {
+  position: relative;
+  width: 100%;
+  &_normal {
+    overflow: hidden;
+    white-space: nowrap;
+    margin-right: 68px;
+  }
+  &_viewfull {
+    margin-right: 68px;
+  }
+
+  &_button {
+    display: inline-block !important;
+    margin-right: 12px;
+    margin-bottom: 12px;
+    height: 44px !important;
+    font-weight: 600;
+  }
+  &_control {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: linear-gradient(
+      81deg,
+      rgba(218, 69, 143, 0.4) 7.2%,
+      rgba(218, 52, 221, 0) 52.38%
+    ) !important;
+    border-radius: 4px;
+    height: 44px;
+    width: 52px !important;
+  }
+}

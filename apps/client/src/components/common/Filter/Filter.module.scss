@@ -9,9 +9,10 @@
     justify-content: space-between;
     &_reset {
       padding-left: 0px;
+      background: transparent !important;
     }
     &_submit {
-      min-width: 168px;
+      min-width: 128px;
       height: 44px !important;
     }
   }

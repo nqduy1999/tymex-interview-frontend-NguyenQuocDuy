@@ -19,9 +19,11 @@ export const themeConfig: ThemeConfig = {
       borderRadius: 4,
       borderRadiusLG: 4,
       fontSize: 16,
-      defaultBg: 'transparent',
+      defaultBg:
+        'linear-gradient(91deg, rgba(218, 69, 143, 0.40) -6%, rgba(218, 52, 221, 0.40) 113.05%)',
       defaultBorderColor: 'transparent',
-      defaultHoverBg: 'transparent',
+      defaultHoverBg:
+        'linear-gradient(91deg, rgba(218, 69, 143, 0.40) -6%, rgba(218, 52, 221, 0.40) 113.05%)',
       defaultHoverBorderColor: 'transparent',
       defaultActiveBorderColor: 'transparent',
       defaultActiveBg: 'transparent',
@@ -69,6 +71,15 @@ export const themeConfig: ThemeConfig = {
         'linear-gradient(91deg, #da41a2 24.03%, #da37ce 83.19%) !important',
       colorBgSpotlight:
         'linear-gradient(91deg, rgba(218, 69, 143, 0.00) 0.55%, #DA41A2 24.03%, #DA37CE 83.19%, rgba(218, 52, 221, 0.00) 102.8%)',
+    },
+    Card: {
+      colorBgContainer: 'rgba(58, 56, 65, 0.60)',
+      colorBorderSecondary: 'rgba(58, 56, 65, 0.60)',
+      padding: 16,
+    },
+    Skeleton: {
+      gradientToColor: 'rgba(0, 0, 0, 0.06)',
+      gradientFromColor: '#89888B',
     },
   },
 }
