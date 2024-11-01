@@ -22,7 +22,16 @@ const FooterAction = () => {
               },
             ]}
           >
-            <Input placeholder="Your email address" />
+            <Input
+              styles={{
+                input: {
+                  fontSize: 12,
+                  height: 44,
+                  borderColor: 'white',
+                },
+              }}
+              placeholder="Your email address"
+            />
           </Form.Item>
         </Col>
         <Col md={10} xs={24}>

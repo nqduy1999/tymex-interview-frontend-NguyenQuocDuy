@@ -34,9 +34,16 @@ export const themeConfig: ThemeConfig = {
       borderRadius: 4,
       colorBgContainer: 'transparent',
       paddingBlock: 10,
-      fontSize: 12,
+      fontSize: 16,
       colorBgBase: 'white',
       colorTextPlaceholder: '#89888B',
+      colorBorder: '#89888B',
+      // prevent active, hover, color
+      activeBorderColor: '#89888B',
+      activeShadow: 'none',
+      hoverBorderColor: '#89888B',
+      paddingInline: 10,
+      lineHeight: 1.375,
     },
     Result: {
       colorTextDescription: 'white',
@@ -45,9 +52,23 @@ export const themeConfig: ThemeConfig = {
       colorBgContainer: 'transparent',
       borderRadius: 4,
       activeOutlineColor: 'transparent',
-      selectorBg: '#89888B',
-      optionSelectedBg: '#89888B',
+      selectorBg: 'transparent',
+      optionSelectedBg: 'transparent',
       borderRadiusLG: 4,
+      colorBorder: '#3A3841',
+      colorTextPlaceholder: '#89888B',
+      fontSize: 16,
+    },
+    Slider: {
+      railBg: '#3A3841',
+      railHoverBg: '#3A3841',
+      colorTextDescription: '#D6D6D6',
+    },
+    Tooltip: {
+      colorBgMask:
+        'linear-gradient(91deg, #da41a2 24.03%, #da37ce 83.19%) !important',
+      colorBgSpotlight:
+        'linear-gradient(91deg, rgba(218, 69, 143, 0.00) 0.55%, #DA41A2 24.03%, #DA37CE 83.19%, rgba(218, 52, 221, 0.00) 102.8%)',
     },
   },
 }

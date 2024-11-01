@@ -1,2 +1,2 @@
 export { default as BackgroundMarketplace } from './BackgroundMarketplace'
-export { default as CardItemBackground } from './CardItemBackground'
+export { default as FilterProducts } from './FilterProducts'

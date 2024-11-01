@@ -1,3 +1,5 @@
+@use './vars.scss' as *;
+
 @font-face {
   font-family: 'Infer';
   src: url('../fonts/Inter/Inter-VariableFont_opsz,wght.ttf');
@@ -15,11 +17,16 @@
   --bg-overlay: #f2f2f2;
 }
 
+html {
+  box-sizing: border-box;
+}
+
 body {
-  margin: 0px !important;
+  margin: 0 !important;
   color: white;
   font-family: 'Infer';
   height: 100vh;
+  padding: 0;
 }
 
 .font-drone-ranger {
@@ -46,7 +53,7 @@ body {
 .drawer_header_content {
   .ant-drawer-content {
     border-radius: 16px;
-    background-color: #17161a;
+    background-color: $neutral-color;
   }
   .ant-drawer-header {
     display: none;
@@ -61,4 +68,8 @@ body {
 .remove-blur {
   filter: blur(0px);
   transition: filter 0.3s ease-in;
+}
+
+.ant-tooltip-inner {
+  background: linear-gradient(91deg, #da41a2 24.03%, #da37ce 83.19%) !important;
 }
