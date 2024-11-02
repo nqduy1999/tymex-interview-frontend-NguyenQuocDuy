@@ -7,7 +7,9 @@ This repository is used in the `npx create-turbo` command, and selected when cho
 - Watch the video here https://drive.google.com/file/d/1jRPwCxLmpRLUj1yhRBgwOnCWpLoUOepP/view?usp=drive_link
 
 ## Demo
-- ![Large desktop version](./demo/desktop.png)
+### Desktop version
+ ![Large desktop version](./demo/desktop.png)
+### Mobile version
 - ![Mobile version](./demo/tablet.png)
 ## Installation 
 
@@ -31,4 +33,9 @@ To develop all apps and packages, run the following command:
 ```
 cd tymex-interview-frontend-NguyenQuocDuy
 yarn run dev
+```
+### Test
+```
+cd tymex-interview-frontend-NguyenQuocDuy/apps/client
+yarn test
 ```
