@@ -5,6 +5,9 @@
     top: 120px;
     max-width: 900px;
     padding: 0 80px;
+    @media screen and (min-width: 1600px) {
+      padding: 0 160px;
+    }
   }
   &_container {
     position: relative;
@@ -16,6 +19,9 @@
     display: flex;
     gap: 60px;
     padding: 0 80px;
+    @media screen and (min-width: 1600px) {
+      padding: 0 160px;
+    }
     &_title {
       font-family: 'DroneRangerPro';
       color: #17161a !important;
@@ -26,6 +32,9 @@
     position: absolute;
     bottom: 0;
     right: 24px;
+    @media screen and (min-width: 1600px) {
+      right: 160px;
+    }
     &_image {
       max-width: 400px;
       width: 100%;
