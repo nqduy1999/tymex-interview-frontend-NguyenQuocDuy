@@ -2,9 +2,10 @@ import { useURLParams } from '@client/hooks'
 import { IProduct } from '@client/interfaces'
 import { routeString } from '@client/routes/routeString'
 import { getProducts } from '@client/services'
-import { timeout } from '@client/utils'
-import { useCallback, useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { onGetDefaultPaging, timeout } from '@client/utils'
+import { ParsedQuery } from 'query-string'
+import { useCallback, useEffect, useMemo, useState } from 'react'
+import { useLocation, useNavigate } from 'react-router-dom'
 
 const useFetchProducts = () => {
   const [loading, setLoading] = useState<boolean>(false)
@@ -12,31 +13,39 @@ const useFetchProducts = () => {
   const navigate = useNavigate()
   const params = useURLParams()
 
-  const filterProducts = (
-    products: IProduct[],
-    params: Record<string, string>,
-  ) => {
-    const { offset } = params
-    return products.slice(0, Number(offset))
-  }
+  const mapperParams = useMemo(() => {
+    const { price, createdAt, ...restParams } = params
+    return {
+      ...restParams,
+      ...(price
+        ? {
+            _sort: 'price',
+            _order: price,
+          }
+        : {}),
+      ...(createdAt
+        ? {
+            _sort: 'createdAt',
+            _order: createdAt,
+          }
+        : {}),
+    }
+  }, [params])
 
   const fetchProducts = useCallback(async () => {
     setLoading(true)
     try {
-      const products = filterProducts(
-        await getProducts(params),
-        params as Record<string, string>,
-      )
+      const products = await getProducts(mapperParams)
       await timeout(1500)
       setProducts(products)
     } finally {
       setLoading(false)
     }
-  }, [params])
+  }, [mapperParams])
 
   useEffect(() => {
     if (Object.keys(params)?.length === 0) {
-      navigate(`${routeString.PRODUCT.root}?offset=10`)
+      navigate(`${routeString.PRODUCT.root}?${onGetDefaultPaging({})}`)
       return
     }
     fetchProducts()

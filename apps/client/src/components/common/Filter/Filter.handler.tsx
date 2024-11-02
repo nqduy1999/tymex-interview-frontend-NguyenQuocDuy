@@ -7,9 +7,11 @@ import {
 } from '@client/components/common/Filter/type'
 import filterModule from './Filter.module.scss'
 import { useFilterContext } from './Filter.context'
-import { Button, Image } from 'antd'
+import { Button, Col, Image, Row } from 'antd'
 import { SearchInput, Slider, Select } from '@client/components/common'
 import { IMAGES_CONST } from '@client/configs'
+import { useScreenMode } from '@client/hooks'
+import ModalFilter from './ModalFilter'
 
 const FilterHandler = () => {
   const {
@@ -20,8 +22,10 @@ const FilterHandler = () => {
     setFilter,
     filter,
     executeSearch,
+    isSupportMobile,
   } = useFilterContext()
 
+  const { isLargeDesktop } = useScreenMode()
   const renderFieldByType = useCallback(
     (field: FieldsType) => {
       switch (field.type) {
@@ -80,11 +84,14 @@ const FilterHandler = () => {
     onClearAll()
   }
 
-  return (
-    <div className={filterModule.filter_container}>
-      {fields.map((field, index) => (
-        <Fragment key={`fields-${index}`}>{renderFieldByType(field)}</Fragment>
-      ))}
+  const renderAction = ({
+    callbackSubmit,
+    callbackReset,
+  }: {
+    callbackSubmit?: () => void
+    callbackReset?: () => void
+  }) => {
+    return (
       <div className={filterModule.filter_container_action}>
         <Button
           className={filterModule.filter_container_action_reset}
@@ -96,21 +103,50 @@ const FilterHandler = () => {
             />
           }
           variant="outlined"
-          onClick={onResetFilter}
+          onClick={() => {
+            onResetFilter()
+            callbackReset && callbackReset()
+          }}
         >
           Reset field
         </Button>
         <Button
           type="primary"
           className={filterModule.filter_container_action_submit}
-          onClick={onSubmitSearch}
+          onClick={() => {
+            onSubmitSearch()
+            callbackSubmit && callbackSubmit()
+          }}
           disabled={isLoading}
         >
           Submit
         </Button>
       </div>
+    )
+  }
+  return isLargeDesktop ? (
+    <div className={filterModule.filter_container}>
+      {fields.map((field, index) => (
+        <Fragment key={`fields-${index}`}>{renderFieldByType(field)}</Fragment>
+      ))}
+      {renderAction({})}
     </div>
-  )
+  ) : isSupportMobile ? (
+    <ModalFilter>
+      {({ callbackSubmit }: { callbackSubmit: () => void }) => (
+        <Row gutter={[12, 12]}>
+          {fields.map((field, index) => (
+            <Col span={12}>
+              <Fragment key={`fields-${index}`}>
+                {renderFieldByType(field)}
+              </Fragment>
+            </Col>
+          ))}
+          {renderAction({ callbackSubmit, callbackReset: callbackSubmit })}
+        </Row>
+      )}
+    </ModalFilter>
+  ) : null
 }
 
 export default FilterHandler

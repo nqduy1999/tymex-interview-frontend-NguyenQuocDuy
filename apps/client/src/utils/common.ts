@@ -34,3 +34,11 @@ export function getRandomColor() {
   }
   return color
 }
+
+export const onGetDefaultPaging = (filter: Record<string, string>) => {
+  return new URLSearchParams({
+    _page: '1',
+    _per_page: '10',
+    ...filter,
+  })
+}

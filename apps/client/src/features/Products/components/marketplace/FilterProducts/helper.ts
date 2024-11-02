@@ -37,22 +37,22 @@ const optionTheme: BaseOptionType[] = [
 const optionTime: BaseOptionType[] = [
   {
     label: 'Earliest',
-    value: 'earliest',
+    value: 'asc',
   },
   {
     label: 'Lastest',
-    value: 'lastest',
+    value: 'desc',
   },
 ]
 
 const optionPrice: BaseOptionType[] = [
   {
     label: 'Low to high',
-    value: 'DESC',
+    value: 'asc',
   },
   {
     label: 'High to low',
-    value: 'ASC',
+    value: 'desc',
   },
 ]
 

@@ -19,6 +19,7 @@ type ContextType = {
   onClearAll: () => void
   path: string
   isLoading?: boolean
+  isSupportMobile?: boolean
 }
 
 const FilterContext = createContext<ContextType>({
@@ -31,6 +32,7 @@ const FilterContext = createContext<ContextType>({
   onClearAll: () => {},
   path: '',
   isLoading: false,
+  isSupportMobile: true,
 })
 
 export const useFilterContext = () => useContext(FilterContext)
@@ -40,6 +42,7 @@ const FilterContextProvider = ({
   fields,
   isLoading,
   children,
+  isSupportMobile,
 }: FilterProps) => {
   const navigate = useNavigate()
   const [filter, setFilter] = useState<Record<string, string>>({})
@@ -79,6 +82,7 @@ const FilterContextProvider = ({
         executeSearch,
         onSubmitSearch,
         onClearAll,
+        isSupportMobile,
       }}
     >
       {children}

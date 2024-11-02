@@ -14,6 +14,7 @@ import chevronDown from '@client/assets/images/icons/chevron-down.svg'
 
 import waveSection from '@client/assets/images/general/wave.svg'
 import backgroundProduct from '@client/assets/images/products/background-marketplace.webp'
+import backgroundProductMobile from '@client/assets/images/general/background_mobile.webp'
 import assasin from '@client/assets/images/products/characters/assasin.webp'
 import neonGuy from '@client/assets/images/products/characters/neon-guy.webp'
 import mafiaEngland from '@client/assets/images/products/characters/mafia-england.webp'
@@ -32,6 +33,7 @@ export const IMAGES_CONST = {
   waveSection,
   products: {
     background: backgroundProduct,
+    backgroundMobile: backgroundProductMobile,
     newArrival,
     characters: {
       assasin,

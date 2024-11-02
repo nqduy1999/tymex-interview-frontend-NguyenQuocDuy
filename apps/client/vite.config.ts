@@ -1,7 +1,7 @@
 /* eslint-disable import/no-extraneous-dependencies */
-/// <reference types="vitest" />
 /// <reference types="vite/client" />
 import { resolve } from 'path'
+import EnvironmentPlugin from 'vite-plugin-environment'
 
 import { defineConfig, loadEnv } from 'vite'
 import react from '@vitejs/plugin-react'
@@ -14,7 +14,7 @@ export default defineConfig(({ mode }) => {
     build: {
       sourcemap: env.VITE_ENV === 'development', // only set true when work with dev mode
     },
-    plugins: [react(), tsconfigPaths()],
+    plugins: [react(), tsconfigPaths(), EnvironmentPlugin('all')],
     css: {
       modules: {
         scopeBehaviour: 'local',
@@ -40,6 +40,9 @@ export default defineConfig(({ mode }) => {
       watch: {
         usePolling: true,
       },
+    },
+    define: {
+      'process.env': {},
     },
   }
 })

@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom'
 import { useFilterContext } from '@client/components/common/Filter/Filter.context'
 import { routeString } from '@client/routes/routeString'
 import { useURLParams } from '@client/hooks'
+import { onGetDefaultPaging } from '@client/utils'
 
 const categorySample = [
   {
@@ -53,13 +54,15 @@ const categorySample = [
 const CategoryList = () => {
   const navigate = useNavigate()
   const params = useURLParams()
-
   const { filter } = useFilterContext()
   const [viewFull, setViewFull] = useState<boolean>(false)
 
   const onFilterList = (value: string) => {
     navigate(
-      `${routeString.PRODUCT.root}?${new URLSearchParams({ ...filter, ...(value ? { category: value } : {}), offset: '20' }).toString()}`,
+      `${routeString.PRODUCT.root}?${onGetDefaultPaging({
+        category: value,
+        ...filter,
+      })}`,
     )
   }
 

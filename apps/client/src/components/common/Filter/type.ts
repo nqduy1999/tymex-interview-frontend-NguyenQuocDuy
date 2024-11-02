@@ -33,6 +33,7 @@ export interface FilterProps {
   fields: FieldsType[]
   isLoading?: boolean
   children?: React.ReactNode
+  isSupportMobile?: boolean
 }
 
 export type FieldsType = SearchType | SliderType | SelectType

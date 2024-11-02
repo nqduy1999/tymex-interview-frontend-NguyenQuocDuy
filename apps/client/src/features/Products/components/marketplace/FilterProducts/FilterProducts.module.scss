@@ -2,6 +2,9 @@
   display: flex;
   flex-direction: column;
   gap: 24px;
+  @media screen and (max-width: 994px) {
+    justify-content: flex-end;
+  }
 }
 .filter_product_search {
   margin-bottom: 64px;

@@ -7,6 +7,9 @@
     gap: 36px;
     align-items: center;
     justify-content: space-between;
+    @media screen and (max-width: 994px) {
+      width: 100%;
+    }
     &_reset {
       padding-left: 0px;
       background: transparent !important;
@@ -14,6 +17,11 @@
     &_submit {
       min-width: 128px;
       height: 44px !important;
+    }
+  }
+  &_drawer {
+    &_container {
+      padding-top: 36px;
     }
   }
 }

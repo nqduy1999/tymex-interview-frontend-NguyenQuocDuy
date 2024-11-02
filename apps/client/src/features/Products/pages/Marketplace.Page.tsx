@@ -8,21 +8,20 @@ import {
 } from '@client/features/Products/components'
 import { Col, Row } from 'antd'
 import { useFetchProducts } from '@client/features/Products/hooks'
+import { useScreenMode } from '@client/hooks'
 
 const MarketplacePage = () => {
   const { products, loading } = useFetchProducts()
-
-  console.log(products, 'products')
 
   return (
     <div className={marketPlaceModule.marketplace}>
       <BackgroundMarketplace />
       <div className={marketPlaceModule.marketplace_content}>
         <Row gutter={[36, 12]}>
-          <Col span={7}>
+          <Col xl={7} lg={24}>
             <FilterProducts />
           </Col>
-          <Col span={17}>
+          <Col xl={17} lg={24}>
             <CategoryList />
             {loading ? (
               <SkeletonList loading={true} />

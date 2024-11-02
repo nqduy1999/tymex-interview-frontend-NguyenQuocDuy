@@ -4,7 +4,7 @@ const fromRoot = d => path.join(__dirname, d)
 
 module.exports = {
   roots: [fromRoot('apps/client')],
-  preset: 'ts-jest/presets/js-with-ts',
+  preset: 'ts-jest/presets/default-esm',
   resetMocks: true,
   coveragePathIgnorePatterns: [],
   collectCoverageFrom: ['<rootDir>/src/**/*.{js,ts,tsx}'],

@@ -7,7 +7,7 @@ import type {
 import axios from 'axios'
 import { httpClientConfig } from './config'
 
-const { VITE_BASE_API_DOMAIN } = import.meta.env
+const { VITE_BASE_API_DOMAIN } = process.env
 
 const apiClient = axios.create({
   baseURL: VITE_BASE_API_DOMAIN,

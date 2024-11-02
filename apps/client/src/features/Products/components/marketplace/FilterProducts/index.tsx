@@ -8,6 +8,7 @@ const FilterProducts = () => {
     <div className={filterProductModule.filter_product} style={{}}>
       <Filter
         path={routeString.PRODUCT.root}
+        isSupportMobile={true}
         fields={[
           {
             type: 'search',
@@ -53,7 +54,7 @@ const FilterProducts = () => {
           },
           {
             type: 'select',
-            name: 'time',
+            name: 'createdAt',
             placeholder: 'Select time',
             label: 'TIME',
             options: optionTime,
