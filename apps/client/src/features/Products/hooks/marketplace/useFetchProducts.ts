@@ -1,8 +1,10 @@
-import { useURLParams } from '@client/hooks'
+import { useInterval, useURLParams } from '@client/hooks'
 import { IProduct } from '@client/interfaces'
 import { ProductService } from '@client/services'
 import { timeout } from '@client/utils'
 import { useCallback, useEffect, useMemo, useState } from 'react'
+
+const INTERVAL_TIME = 60 * 1000 // every 60s refetch data to get latest
 
 const useFetchProducts = () => {
   const [loading, setLoading] = useState<boolean>(false)
@@ -63,6 +65,10 @@ const useFetchProducts = () => {
   useEffect(() => {
     fetchProducts()
   }, [fetchProducts])
+
+  useInterval(() => {
+    fetchProducts()
+  }, INTERVAL_TIME)
 
   return {
     products,
