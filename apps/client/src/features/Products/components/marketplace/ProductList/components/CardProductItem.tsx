@@ -62,10 +62,15 @@ const CardProductItem = (props: IProduct & { index: number }) => {
         </div>
       </div>
       <Flex gap={isMobile ? 12 : 24} vertical>
-        <Flex justify="space-between" align="center">
+        <Flex
+          justify="space-between"
+          align={isMobile ? 'flex-start' : 'center'}
+          vertical={isMobile}
+          gap={12}
+        >
           <Typography.Title
             level={5}
-            style={{ margin: 0, fontSize: isMobile ? 13 : 16 }}
+            style={{ margin: 0, fontSize: isMobile ? 12 : 16 }}
           >
             {title}
           </Typography.Title>
@@ -74,7 +79,7 @@ const CardProductItem = (props: IProduct & { index: number }) => {
               src={IMAGES_CONST.icons.etherium}
               alt={IMAGES_CONST.icons.etherium}
             />
-            <Typography style={{ fontSize: isMobile ? 12 : 14, lineHeight: 1 }}>
+            <Typography style={{ fontSize: isMobile ? 11 : 14, lineHeight: 1 }}>
               {price}
             </Typography>
           </Flex>
@@ -85,10 +90,10 @@ const CardProductItem = (props: IProduct & { index: number }) => {
               backgroundColor: getRandomColor(),
             }}
             src={author.avatar}
-            size={32}
+            size={isMobile ? 24 : 32}
             alt={author.avatar}
           />
-          <Typography style={{ fontSize: 12 }}>
+          <Typography style={{ fontSize: isMobile ? 10 : 12 }}>
             {author.firstName} {author.lastName}
           </Typography>
         </Flex>
