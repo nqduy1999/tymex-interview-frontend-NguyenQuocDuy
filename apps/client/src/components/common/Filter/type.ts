@@ -18,6 +18,8 @@ export interface SearchType
 
 export interface SliderType extends BaseType, SliderProps {
   type: 'slider'
+  startName: string
+  endName: string
 }
 
 export interface SelectType
@@ -31,6 +33,7 @@ export interface FilterProps {
   fields: FieldsType[]
   isLoading?: boolean
   children?: React.ReactNode
+  isSupportMobile?: boolean
 }
 
 export type FieldsType = SearchType | SliderType | SelectType

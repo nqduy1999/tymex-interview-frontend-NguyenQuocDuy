@@ -7,31 +7,33 @@ import resetFilter from '@client/assets/images/icons/reset-filter.svg'
 import search from '@client/assets/images/icons/search.png'
 import globe from '@client/assets/images/icons/globe.svg'
 import etherium from '@client/assets/images/icons/etherium.svg'
+import favourite from '@client/assets/images/icons/favourite.svg'
+import unFavourite from '@client/assets/images/icons/un_favourite.svg'
 
 import chevronDown from '@client/assets/images/icons/chevron-down.svg'
 
-import generalBackground from '@client/assets/images/general/background.png'
 import waveSection from '@client/assets/images/general/wave.svg'
 import backgroundProduct from '@client/assets/images/products/background-marketplace.webp'
-import assasin from '@client/assets/images/products/characters/assasin.png'
-import neonGuy from '@client/assets/images/products/characters/neon-guy.png'
-import mafiaEngland from '@client/assets/images/products/characters/mafia-england.png'
-import basketballGirl from '@client/assets/images/products/characters/basketball-girl.png'
+import backgroundProductMobile from '@client/assets/images/general/background_mobile.webp'
+import assasin from '@client/assets/images/products/characters/assasin.webp'
+import neonGuy from '@client/assets/images/products/characters/neon-guy.webp'
+import mafiaEngland from '@client/assets/images/products/characters/mafia-england.webp'
+import basketballGirl from '@client/assets/images/products/characters/basketball-girl.webp'
 import theDjText from '@client/assets/images/products/characters/the-dj-text.svg'
-import theDj from '@client/assets/images/products/characters/the-dj.png'
+import theDj from '@client/assets/images/products/characters/the-dj.webp'
 import newArrival from '@client/assets/images/products/new_arrival.webp'
 
-import character1 from '@client/assets/images/products/_mock/character_1.png'
-import character2 from '@client/assets/images/products/_mock/character_2.png'
-import character3 from '@client/assets/images/products/_mock/character_3.png'
-import character4 from '@client/assets/images/products/_mock/character_4.png'
-import character5 from '@client/assets/images/products/_mock/character_5.png'
+import character1 from '@client/assets/images/products/_mock/character_1.webp'
+import character2 from '@client/assets/images/products/_mock/character_2.webp'
+import character3 from '@client/assets/images/products/_mock/character_3.webp'
+import character4 from '@client/assets/images/products/_mock/character_4.webp'
+import character5 from '@client/assets/images/products/_mock/character_5.webp'
 
 export const IMAGES_CONST = {
-  generalBackground,
   waveSection,
   products: {
     background: backgroundProduct,
+    backgroundMobile: backgroundProductMobile,
     newArrival,
     characters: {
       assasin,
@@ -59,5 +61,7 @@ export const IMAGES_CONST = {
     chevronDown,
     resetFilter,
     etherium,
+    favourite,
+    unFavourite,
   },
 }

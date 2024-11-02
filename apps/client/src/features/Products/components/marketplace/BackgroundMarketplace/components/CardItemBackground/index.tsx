@@ -34,7 +34,7 @@ const CardItemBackground = ({
       {...configMotion}
       transition={{
         duration: 0.3,
-        delay: index * 0.5,
+        delay: index * 0.2,
       }}
     >
       <Flex gap={8} vertical={true} justify="center" align="center">

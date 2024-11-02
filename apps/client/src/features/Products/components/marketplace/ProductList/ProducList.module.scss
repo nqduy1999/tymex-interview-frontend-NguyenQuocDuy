@@ -23,6 +23,19 @@
         width: 100% !important;
         max-width: 235px;
       }
+      &_tier {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        background-color: rgba(49, 59, 69, 0.5) !important;
+        border-color: transparent !important;
+        padding: 4px 12px !important;
+      }
+      &_favourite {
+        position: absolute !important;
+        top: 10px !important;
+        right: 10px;
+      }
     }
     &_content {
       display: flex;

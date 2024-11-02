@@ -1,16 +1,18 @@
 import { routeString } from '@client/routes/routeString'
 import filterProductModule from './FilterProducts.module.scss'
-import { Filter, SearchInput, Slider } from '@client/components/common'
+import { Filter } from '@client/components/common'
+import { optionPrice, optionTheme, optionTier, optionTime } from './helper'
 
 const FilterProducts = () => {
   return (
     <div className={filterProductModule.filter_product} style={{}}>
       <Filter
         path={routeString.PRODUCT.root}
+        isSupportMobile={true}
         fields={[
           {
             type: 'search',
-            name: 'name',
+            name: 'title',
             placeholder: 'Quick search',
           },
           {
@@ -33,30 +35,36 @@ const FilterProducts = () => {
               },
             },
             max: 200,
+            startName: 'minPrice',
+            endName: 'maxPrice',
           },
           {
             type: 'select',
             name: 'tier',
             placeholder: 'Select tier',
             label: 'TIER',
+            options: optionTier,
           },
           {
             type: 'select',
             name: 'theme',
             placeholder: 'Select theme',
             label: 'THEME',
+            options: optionTheme,
           },
           {
             type: 'select',
-            name: 'time',
+            name: 'createdAt',
             placeholder: 'Select time',
             label: 'TIME',
+            options: optionTime,
           },
           {
             type: 'select',
             name: 'price',
             placeholder: 'Select price mode',
             label: 'PRICE',
+            options: optionPrice,
           },
         ]}
       />

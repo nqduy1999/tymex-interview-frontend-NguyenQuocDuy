@@ -11,11 +11,10 @@ export const loadable = (loader: () => any) =>
     ).then(loader),
   )
 
-export const onGetRandomPropertyCard = () => {
+export const onGetRandomPropertyCard = (tier: string) => {
   const image =
     mockBackgroundImage[Math.floor(Math.random() * mockBackgroundImage.length)]
-  const background =
-    mockBackgroundCard[Math.floor(Math.random() * mockBackgroundCard.length)]
+  const background = (mockBackgroundCard as Record<string, string>)[tier]
 
   return {
     background,
@@ -34,4 +33,10 @@ export function getRandomColor() {
     color += letters[Math.floor(Math.random() * 16)]
   }
   return color
+}
+
+export const parseObjectToSearch = (filter: Record<string, string>) => {
+  return new URLSearchParams({
+    ...filter,
+  })
 }

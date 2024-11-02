@@ -10,24 +10,30 @@ import { Col, Row } from 'antd'
 import { useFetchProducts } from '@client/features/Products/hooks'
 
 const MarketplacePage = () => {
-  const { products, loading } = useFetchProducts()
-
-  console.log(products, 'products')
+  const { products, loading, onChangeOffset, onLoadmore, pagination } =
+    useFetchProducts()
 
   return (
-    <div className={marketPlaceModule.marketplace}>
+    <div
+      className={marketPlaceModule.marketplace}
+      data-testid="marketplace-page"
+    >
       <BackgroundMarketplace />
       <div className={marketPlaceModule.marketplace_content}>
         <Row gutter={[36, 12]}>
-          <Col span={7}>
+          <Col xl={7} lg={24}>
             <FilterProducts />
           </Col>
-          <Col span={17}>
-            <CategoryList />
-            {loading ? (
+          <Col xl={17} lg={24}>
+            <CategoryList onChangeOffset={onChangeOffset} />
+            {loading && Number(pagination._limit) <= 10 ? (
               <SkeletonList loading={true} />
             ) : (
-              <ProductList products={products} />
+              <ProductList
+                onLoadmore={onLoadmore}
+                loading={loading}
+                products={products}
+              />
             )}
           </Col>
         </Row>

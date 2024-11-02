@@ -1,29 +1,59 @@
 import { useURLParams } from '@client/hooks'
 import { IProduct } from '@client/interfaces'
-import { getProducts } from '@client/services'
+import { ProductService } from '@client/services'
 import { timeout } from '@client/utils'
-import { useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect, useMemo, useState } from 'react'
 
 const useFetchProducts = () => {
   const [loading, setLoading] = useState<boolean>(false)
+  const [pagination, setPagination] = useState({
+    _page: '1',
+    _limit: '10',
+  })
   const [products, setProducts] = useState<IProduct[]>([])
   const params = useURLParams()
 
-  const filterProducts = (products: IProduct[]) => {
-    return products.slice(0, 10)
-  }
+  const mapperParams = useMemo(() => {
+    const { price, createdAt, ...restParams } = params
+    return {
+      ...restParams,
+      ...(price
+        ? {
+            _sort: 'price',
+            _order: price,
+          }
+        : {}),
+      ...(createdAt
+        ? {
+            _sort: 'createdAt',
+            _order: createdAt,
+          }
+        : {}),
+      ...pagination,
+    }
+  }, [params, pagination])
 
   const fetchProducts = useCallback(async () => {
     setLoading(true)
     try {
-      const products = await getProducts(params)
+      const products = await ProductService.getProducts(mapperParams)
       await timeout(1500)
-      setProducts(filterProducts(products))
+      setProducts(products)
     } finally {
       setLoading(false)
     }
-  }, [params])
+  }, [mapperParams])
 
+  const onChangeOffset = (perPage: string) => {
+    setPagination({ ...pagination, _limit: perPage })
+  }
+
+  const onLoadmore = (perPage: number) => {
+    setPagination({
+      ...pagination,
+      _limit: (Number(pagination._limit) + perPage).toString(),
+    })
+  }
   useEffect(() => {
     fetchProducts()
   }, [fetchProducts])
@@ -31,6 +61,9 @@ const useFetchProducts = () => {
   return {
     products,
     loading,
+    onChangeOffset,
+    onLoadmore,
+    pagination,
   }
 }
 

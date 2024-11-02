@@ -12,7 +12,10 @@
       padding: 12px 24px;
     }
     @media screen and (min-width: 996px) {
-      max-width: 1600px;
+      max-width: 1920px;
+    }
+    @media screen and (min-width: 1600px) {
+      padding: 40px 160px;
     }
   }
   .footer__section_title {

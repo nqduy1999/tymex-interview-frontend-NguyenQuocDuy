@@ -7,6 +7,7 @@ const useScreenMode = () => {
     isMobile: width < 600,
     isIpad: width >= 600 && width <= 1024,
     isDesktop: width > 1024,
+    isLargeDesktop: width > 1024,
     isExtraDesktop: width > 1600,
     isSuperDesktop: width >= 1920,
 

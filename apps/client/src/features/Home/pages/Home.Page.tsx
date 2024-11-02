@@ -13,9 +13,15 @@ const HomePage = () => {
 
   return (
     <Container>
-      <Typography.Title level={5}>
+      <Typography.Title level={5} data-testid="welcome-test">
         Welcome to homepage test assignment{' '}
-        <Button type="primary" size="middle" onClick={onMoveToMarketplace}>
+        <Button
+          data-testid="click-to-move-marketplace"
+          id="click-to-move-marketplace"
+          type="primary"
+          size="middle"
+          onClick={onMoveToMarketplace}
+        >
           click here
         </Button>{' '}
         to move Marketplace

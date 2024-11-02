@@ -11,7 +11,7 @@ export interface SelectCustomProps extends SelectProps {
 
 const Select = ({ label, children, ...props }: SelectCustomProps) => {
   return (
-    <div className={sliderModule.select_container}>
+    <div className={sliderModule.select_container} data-testid={props.id}>
       {label && (
         <Title className={sliderModule.select_container_title} level={5}>
           {label}

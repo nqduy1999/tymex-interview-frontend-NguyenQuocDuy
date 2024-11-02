@@ -1,8 +1,42 @@
-import { Empty, List, Typography } from 'antd'
+import { Button, Empty, List, Skeleton, Typography } from 'antd'
 import CardProductItem from './components/CardProductItem'
 import { IProduct } from '@client/interfaces'
+import { useURLParams } from '@client/hooks'
 
-const ProductList = ({ products }: { products: IProduct[] }) => {
+const ProductList = ({
+  products,
+  loading,
+  onLoadmore,
+}: {
+  products: IProduct[]
+  loading?: boolean
+  onLoadmore: (perPage: number) => void
+}) => {
+  const loadMore = !loading ? (
+    <div
+      style={{
+        textAlign: 'center',
+        marginTop: 12,
+        height: 32,
+        lineHeight: '32px',
+      }}
+    >
+      <Button
+        data-testid="load-more-btn"
+        onClick={() => onLoadmore(10)}
+        type="primary"
+        size="large"
+        loading={loading}
+        style={{
+          minWidth: 200,
+          minHeight: 70,
+          fontSize: 16,
+        }}
+      >
+        View more
+      </Button>
+    </div>
+  ) : null
   return (
     <List
       style={{
@@ -17,15 +51,21 @@ const ProductList = ({ products }: { products: IProduct[] }) => {
         gutter: [40, 24],
       }}
       dataSource={products}
+      loading={loading}
       renderItem={(product, index) => (
         <List.Item>
           <CardProductItem index={index} {...product} />
         </List.Item>
       )}
+      loadMore={loadMore}
       locale={{
         emptyText: (
           <Empty
-            description={<Typography.Title level={5}>No data</Typography.Title>}
+            description={
+              <Typography.Title data-testid="no-data-products" level={5}>
+                No data products
+              </Typography.Title>
+            }
           />
         ),
       }}

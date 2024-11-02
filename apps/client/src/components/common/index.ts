@@ -1,5 +1,5 @@
 // barrel export
-export { default as LazyLoad } from './LazyLoad'
+export { default as LazyLoad } from './LazyLoad/LazyLoad'
 export { default as LanguageDropdown } from './LanguageDropdown'
 export { default as Container } from './Container'
 export { default as SearchInput } from './SearchInput'
