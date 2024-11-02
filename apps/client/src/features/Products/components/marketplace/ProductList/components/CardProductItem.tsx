@@ -4,6 +4,7 @@ import { IProduct } from '@client/interfaces'
 import { IMAGES_CONST } from '@client/configs'
 import { getRandomColor } from '@client/utils'
 import { motion } from 'framer-motion'
+import { useScreenMode } from '@client/hooks'
 
 const configMotion = {
   initial: {
@@ -20,6 +21,7 @@ const configMotion = {
 
 const CardProductItem = (props: IProduct & { index: number }) => {
   const { background, image, price, title, author, index, tier } = props
+  const { isMobile } = useScreenMode()
   return (
     <motion.div
       transition={{
@@ -59,9 +61,12 @@ const CardProductItem = (props: IProduct & { index: number }) => {
           </Tag>
         </div>
       </div>
-      <Flex gap={24} vertical>
+      <Flex gap={isMobile ? 12 : 24} vertical>
         <Flex justify="space-between" align="center">
-          <Typography.Title level={5} style={{ margin: 0 }}>
+          <Typography.Title
+            level={5}
+            style={{ margin: 0, fontSize: isMobile ? 13 : 16 }}
+          >
             {title}
           </Typography.Title>
           <Flex gap={5} align="center">
@@ -69,7 +74,7 @@ const CardProductItem = (props: IProduct & { index: number }) => {
               src={IMAGES_CONST.icons.etherium}
               alt={IMAGES_CONST.icons.etherium}
             />
-            <Typography style={{ fontSize: 14, lineHeight: 1 }}>
+            <Typography style={{ fontSize: isMobile ? 12 : 14, lineHeight: 1 }}>
               {price}
             </Typography>
           </Flex>

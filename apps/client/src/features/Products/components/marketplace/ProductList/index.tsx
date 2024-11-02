@@ -1,7 +1,7 @@
 import { Button, Empty, List, Skeleton, Typography } from 'antd'
 import CardProductItem from './components/CardProductItem'
 import { IProduct } from '@client/interfaces'
-import { useURLParams } from '@client/hooks'
+import { useScreenMode, useURLParams } from '@client/hooks'
 
 const ProductList = ({
   products,
@@ -12,6 +12,7 @@ const ProductList = ({
   loading?: boolean
   onLoadmore: (perPage: number) => void
 }) => {
+  const { isMobile } = useScreenMode()
   const loadMore = !loading ? (
     <div
       style={{
@@ -28,8 +29,8 @@ const ProductList = ({
         size="large"
         loading={loading}
         style={{
-          minWidth: 200,
-          minHeight: 70,
+          minWidth: isMobile ? 80 : 200,
+          minHeight: isMobile ? 48 : 70,
           fontSize: 16,
         }}
       >
@@ -40,15 +41,16 @@ const ProductList = ({
   return (
     <List
       style={{
-        marginTop: 28,
+        marginTop: isMobile ? 12 : 28,
       }}
       grid={{
+        xs: 2,
         sm: 2,
         md: 2,
         lg: 3,
         xl: 3,
         xxl: 4,
-        gutter: [40, 24],
+        gutter: isMobile ? [12, 12] : [40, 24],
       }}
       dataSource={products}
       loading={loading}
