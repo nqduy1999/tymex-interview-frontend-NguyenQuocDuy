@@ -50,8 +50,6 @@ const FilterContextProvider = ({
 
   const executeSearch = useCallback(
     (filter: any) => {
-      console.log(`${path}?${new URLSearchParams(filter)}`)
-
       navigate(`${path}?${new URLSearchParams(filter)}`)
     },
     [navigate, path],
