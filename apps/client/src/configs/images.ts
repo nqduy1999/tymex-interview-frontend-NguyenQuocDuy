@@ -7,6 +7,8 @@ import resetFilter from '@client/assets/images/icons/reset-filter.svg'
 import search from '@client/assets/images/icons/search.png'
 import globe from '@client/assets/images/icons/globe.svg'
 import etherium from '@client/assets/images/icons/etherium.svg'
+import favourite from '@client/assets/images/icons/favourite.svg'
+import unFavourite from '@client/assets/images/icons/un_favourite.svg'
 
 import chevronDown from '@client/assets/images/icons/chevron-down.svg'
 
@@ -57,5 +59,7 @@ export const IMAGES_CONST = {
     chevronDown,
     resetFilter,
     etherium,
+    favourite,
+    unFavourite,
   },
 }

@@ -18,6 +18,8 @@ export interface SearchType
 
 export interface SliderType extends BaseType, SliderProps {
   type: 'slider'
+  startName: string
+  endName: string
 }
 
 export interface SelectType

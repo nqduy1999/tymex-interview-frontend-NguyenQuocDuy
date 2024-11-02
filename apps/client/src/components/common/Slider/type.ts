@@ -6,4 +6,5 @@ export interface SliderProps {
   marks?: SliderMarks
   min?: number
   max: number
+  onChange?: (value: number | number[]) => void
 }

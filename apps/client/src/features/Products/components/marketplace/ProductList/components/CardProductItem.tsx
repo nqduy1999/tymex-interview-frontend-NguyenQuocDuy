@@ -1,4 +1,4 @@
-import { Avatar, Flex, Image, Typography } from 'antd'
+import { Avatar, Flex, Image, Tag, Typography } from 'antd'
 import productListModule from '../ProducList.module.scss'
 import { IProduct } from '@client/interfaces'
 import { IMAGES_CONST } from '@client/configs'
@@ -19,7 +19,7 @@ const configMotion = {
 }
 
 const CardProductItem = (props: IProduct & { index: number }) => {
-  const { background, image, price, title, author, index } = props
+  const { background, image, price, title, author, index, tier } = props
   return (
     <motion.div
       transition={{
@@ -30,6 +30,18 @@ const CardProductItem = (props: IProduct & { index: number }) => {
       className={productListModule.card_product_item}
     >
       <div className={productListModule.card_product_item_header}>
+        <Image
+          src={IMAGES_CONST.icons.favourite}
+          alt={IMAGES_CONST.icons.favourite}
+          preview={false}
+          width={24}
+          height={24}
+          wrapperStyle={{
+            position: 'absolute',
+            right: 10,
+            top: 15,
+          }}
+        />
         <div
           className={productListModule.card_product_item_header_background}
           style={{
@@ -42,6 +54,9 @@ const CardProductItem = (props: IProduct & { index: number }) => {
             className={productListModule.card_product_item_header_character}
             preview={false}
           />
+          <Tag className={productListModule.card_product_item_header_tier}>
+            {tier}
+          </Tag>
         </div>
       </div>
       <Flex gap={24} vertical>
@@ -59,7 +74,7 @@ const CardProductItem = (props: IProduct & { index: number }) => {
             </Typography>
           </Flex>
         </Flex>
-        <Flex>
+        <Flex gap={12} align="center">
           <Avatar
             style={{
               backgroundColor: getRandomColor(),
@@ -68,6 +83,9 @@ const CardProductItem = (props: IProduct & { index: number }) => {
             size={32}
             alt={author.avatar}
           />
+          <Typography style={{ fontSize: 12 }}>
+            {author.firstName} {author.lastName}
+          </Typography>
         </Flex>
       </Flex>
     </motion.div>

@@ -12,7 +12,7 @@ const MapperProduct = (product: Record<string, any>): IProduct => {
     theme: product.theme,
     tier: product.tier,
     author: product.author,
-    ...onGetRandomPropertyCard(),
+    ...onGetRandomPropertyCard(product.tier),
   }
 }
 

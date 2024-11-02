@@ -46,6 +46,7 @@ export const themeConfig: ThemeConfig = {
       hoverBorderColor: '#89888B',
       paddingInline: 10,
       lineHeight: 1.375,
+      colorTextQuaternary: 'white',
     },
     Result: {
       colorTextDescription: 'white',
@@ -60,6 +61,7 @@ export const themeConfig: ThemeConfig = {
       colorBorder: '#3A3841',
       colorTextPlaceholder: '#89888B',
       fontSize: 16,
+      colorBgElevated: 'rgba(58, 56, 65, 1)',
     },
     Slider: {
       railBg: '#3A3841',

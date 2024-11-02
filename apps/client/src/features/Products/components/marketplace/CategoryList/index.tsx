@@ -10,15 +10,43 @@ import { useURLParams } from '@client/hooks'
 const categorySample = [
   {
     title: 'All',
-    value: 'all',
+    value: '',
   },
   {
-    title: 'Legendary',
-    value: 'legendary',
+    title: 'Upper Body',
+    value: 'Upper Body',
   },
   {
     title: 'Lower Body',
-    value: 'lower-body',
+    value: 'Lower Body',
+  },
+  {
+    title: 'Hat',
+    value: 'Hat',
+  },
+  {
+    title: 'Shoes',
+    value: 'Shoes',
+  },
+  {
+    title: 'Accessory',
+    value: 'Accessory',
+  },
+  {
+    title: 'Legendary',
+    value: 'Legendary',
+  },
+  {
+    title: 'Mythic',
+    value: 'Mythic',
+  },
+  {
+    title: 'Epic',
+    value: 'Epic',
+  },
+  {
+    title: 'Rare',
+    value: 'Rare',
   },
 ]
 
@@ -31,7 +59,7 @@ const CategoryList = () => {
 
   const onFilterList = (value: string) => {
     navigate(
-      `${routeString.PRODUCT.root}?${new URLSearchParams({ ...filter, category: value }).toString()}`,
+      `${routeString.PRODUCT.root}?${new URLSearchParams({ ...filter, ...(value ? { category: value } : {}), offset: '20' }).toString()}`,
     )
   }
 
