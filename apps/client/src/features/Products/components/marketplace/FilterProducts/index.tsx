@@ -12,7 +12,7 @@ const FilterProducts = () => {
         fields={[
           {
             type: 'search',
-            name: 'name',
+            name: 'title',
             placeholder: 'Quick search',
           },
           {
