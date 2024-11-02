@@ -14,7 +14,7 @@ const useFetchProducts = () => {
   const params = useURLParams()
 
   const mapperParams = useMemo(() => {
-    const { price, createdAt, ...restParams } = params
+    const { price, createdAt, minPrice, maxPrice, ...restParams } = params
     return {
       ...restParams,
       ...(price
@@ -27,6 +27,12 @@ const useFetchProducts = () => {
         ? {
             _sort: 'createdAt',
             _order: createdAt,
+          }
+        : {}),
+      ...(minPrice && maxPrice
+        ? {
+            price_gte: minPrice,
+            price_lte: maxPrice,
           }
         : {}),
       ...pagination,
