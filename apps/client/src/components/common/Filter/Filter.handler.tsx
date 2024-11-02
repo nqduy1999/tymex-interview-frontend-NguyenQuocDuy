@@ -136,10 +136,8 @@ const FilterHandler = () => {
       {({ callbackSubmit }: { callbackSubmit: () => void }) => (
         <Row gutter={[12, 12]}>
           {fields.map((field, index) => (
-            <Col span={12}>
-              <Fragment key={`fields-${index}`}>
-                {renderFieldByType(field)}
-              </Fragment>
+            <Col span={12} key={`fields-${index}`}>
+              <Fragment>{renderFieldByType(field)}</Fragment>
             </Col>
           ))}
           {renderAction({ callbackSubmit, callbackReset: callbackSubmit })}

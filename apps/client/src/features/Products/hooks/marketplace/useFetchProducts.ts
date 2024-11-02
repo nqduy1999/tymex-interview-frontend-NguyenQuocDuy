@@ -1,11 +1,8 @@
 import { useURLParams } from '@client/hooks'
 import { IProduct } from '@client/interfaces'
-import { routeString } from '@client/routes/routeString'
-import { getProducts } from '@client/services'
+import { ProductService } from '@client/services'
 import { timeout } from '@client/utils'
-import { ParsedQuery } from 'query-string'
 import { useCallback, useEffect, useMemo, useState } from 'react'
-import { useLocation, useNavigate } from 'react-router-dom'
 
 const useFetchProducts = () => {
   const [loading, setLoading] = useState<boolean>(false)
@@ -39,7 +36,7 @@ const useFetchProducts = () => {
   const fetchProducts = useCallback(async () => {
     setLoading(true)
     try {
-      const products = await getProducts(mapperParams)
+      const products = await ProductService.getProducts(mapperParams)
       await timeout(1500)
       setProducts(products)
     } finally {

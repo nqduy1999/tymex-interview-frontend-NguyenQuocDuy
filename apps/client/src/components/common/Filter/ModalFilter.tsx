@@ -16,6 +16,7 @@ const ModalFilter = ({ children }: { children: any }) => {
     </Button>,
     <Drawer
       open={open}
+      key={'drawer-filter-mobile'}
       placement="bottom"
       closable
       rootClassName={'drawer_header_content'}

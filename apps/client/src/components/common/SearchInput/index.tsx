@@ -9,7 +9,12 @@ const SearchInput = (props: SearchInputProps) => {
   return (
     <Input
       addonBefore={
-        <Image preview={false} src={IMAGES_CONST.icons.search} width={24} />
+        <Image
+          data-testid="search"
+          preview={false}
+          src={IMAGES_CONST.icons.search}
+          width={24}
+        />
       }
       styles={{
         input: {

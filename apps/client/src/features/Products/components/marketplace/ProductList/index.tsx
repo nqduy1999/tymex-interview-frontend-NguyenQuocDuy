@@ -22,6 +22,7 @@ const ProductList = ({
       }}
     >
       <Button
+        data-testid="load-more-btn"
         onClick={() => onLoadmore(10)}
         type="primary"
         size="large"
@@ -60,7 +61,11 @@ const ProductList = ({
       locale={{
         emptyText: (
           <Empty
-            description={<Typography.Title level={5}>No data</Typography.Title>}
+            description={
+              <Typography.Title data-testid="no-data-products" level={5}>
+                No data products
+              </Typography.Title>
+            }
           />
         ),
       }}

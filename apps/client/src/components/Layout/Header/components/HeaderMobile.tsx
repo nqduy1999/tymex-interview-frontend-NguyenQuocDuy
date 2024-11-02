@@ -10,7 +10,7 @@ import { LanguageDropdown } from '@client/components/common'
 const { Text } = Typography
 const HeaderMobile = () => {
   const [open, setOpen] = useState<boolean>(false)
-  const { pathname } = useLocation()
+  const location = useLocation()
 
   const onClose = () => {
     setOpen(false)
@@ -48,7 +48,7 @@ const HeaderMobile = () => {
               <Text
                 className={classNames(headerModule.header_navigation_item, {
                   [headerModule?.['header_navigation_item--active']]:
-                    HEADER_NAVIGATION[pathname]?.path ===
+                    HEADER_NAVIGATION[location?.pathname ?? '/']?.path ===
                     HEADER_NAVIGATION[key]?.path,
                 })}
               >

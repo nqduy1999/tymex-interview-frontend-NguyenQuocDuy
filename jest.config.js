@@ -20,7 +20,7 @@ module.exports = {
   moduleFileExtensions: ['js', 'jsx', 'json', 'ts', 'tsx'],
   transformIgnorePatterns: ['node_modules'],
   moduleNameMapper: {
-    '@client/(.*)': fromRoot('apps/client/src/$1'),
+    '^@client/(.*)$': fromRoot('apps/client/src/$1'),
     '\\.(css|less|scss|sass)$': 'identity-obj-proxy',
     '^.+.(css|styl|less|sass|scss|png|jpg|ttf|woff|woff2)$':
       'jest-transform-stub',

@@ -25,7 +25,9 @@ const SkeletonList = ({ loading }: { loading: boolean }) => {
       locale={{
         emptyText: (
           <Empty
-            description={<Typography.Title level={5}>No data</Typography.Title>}
+            description={
+              <Typography.Title level={5}>No data products</Typography.Title>
+            }
           />
         ),
       }}

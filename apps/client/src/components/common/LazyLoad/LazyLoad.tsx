@@ -5,7 +5,7 @@ import 'nprogress/nprogress.css'
 
 const configuration: Partial<NProgress.NProgressOptions> = {
   showSpinner: true,
-  easing: 'ease'
+  easing: 'ease',
 }
 
 const LazyLoad = () => {
@@ -14,6 +14,9 @@ const LazyLoad = () => {
   useEffect(() => {
     NProgress.start()
 
+    setTimeout(() => {
+      NProgress.done()
+    }, 100)
     return () => {
       NProgress.done(true)
     }

@@ -13,6 +13,8 @@ const LanguageDropdown = () => {
     >
       <Select.Option value="globe">
         <Image
+          id="globe"
+          data-testid="globe"
           src={IMAGES_CONST.icons.globe}
           alt={IMAGES_CONST.icons.globe.toString()}
           width={24}

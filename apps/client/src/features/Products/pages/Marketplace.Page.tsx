@@ -14,7 +14,10 @@ const MarketplacePage = () => {
     useFetchProducts()
 
   return (
-    <div className={marketPlaceModule.marketplace}>
+    <div
+      className={marketPlaceModule.marketplace}
+      data-testid="marketplace-page"
+    >
       <BackgroundMarketplace />
       <div className={marketPlaceModule.marketplace_content}>
         <Row gutter={[36, 12]}>

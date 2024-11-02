@@ -12,8 +12,7 @@ const { Title, Text } = Typography
 const Footer = () => {
   return (
     <>
-      {' '}
-      <div className={footerModule.footer_wave}>
+      <div className={footerModule.footer_wave} data-testid="footer-testid">
         <Image
           src={IMAGES_CONST.waveSection}
           alt={IMAGES_CONST.waveSection.toString()}
