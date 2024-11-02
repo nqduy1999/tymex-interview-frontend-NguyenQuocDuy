@@ -24,7 +24,7 @@ const CardProductItem = (props: IProduct & { index: number }) => {
     <motion.div
       transition={{
         duration: 0.3,
-        delay: index * 0.5,
+        delay: index > 10 ? index * 0.005 : index * 0.05,
       }}
       {...configMotion}
       className={productListModule.card_product_item}

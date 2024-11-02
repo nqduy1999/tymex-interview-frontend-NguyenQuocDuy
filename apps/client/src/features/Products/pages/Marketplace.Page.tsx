@@ -8,10 +8,10 @@ import {
 } from '@client/features/Products/components'
 import { Col, Row } from 'antd'
 import { useFetchProducts } from '@client/features/Products/hooks'
-import { useScreenMode } from '@client/hooks'
 
 const MarketplacePage = () => {
-  const { products, loading } = useFetchProducts()
+  const { products, loading, onChangeOffset, onLoadmore, pagination } =
+    useFetchProducts()
 
   return (
     <div className={marketPlaceModule.marketplace}>
@@ -22,11 +22,15 @@ const MarketplacePage = () => {
             <FilterProducts />
           </Col>
           <Col xl={17} lg={24}>
-            <CategoryList />
-            {loading ? (
+            <CategoryList onChangeOffset={onChangeOffset} />
+            {loading && Number(pagination._limit) <= 10 ? (
               <SkeletonList loading={true} />
             ) : (
-              <ProductList products={products} />
+              <ProductList
+                onLoadmore={onLoadmore}
+                loading={loading}
+                products={products}
+              />
             )}
           </Col>
         </Row>

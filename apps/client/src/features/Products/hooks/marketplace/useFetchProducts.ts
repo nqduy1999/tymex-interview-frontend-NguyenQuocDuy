@@ -2,15 +2,18 @@ import { useURLParams } from '@client/hooks'
 import { IProduct } from '@client/interfaces'
 import { routeString } from '@client/routes/routeString'
 import { getProducts } from '@client/services'
-import { onGetDefaultPaging, timeout } from '@client/utils'
+import { timeout } from '@client/utils'
 import { ParsedQuery } from 'query-string'
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 
 const useFetchProducts = () => {
   const [loading, setLoading] = useState<boolean>(false)
+  const [pagination, setPagination] = useState({
+    _page: '1',
+    _limit: '10',
+  })
   const [products, setProducts] = useState<IProduct[]>([])
-  const navigate = useNavigate()
   const params = useURLParams()
 
   const mapperParams = useMemo(() => {
@@ -29,8 +32,9 @@ const useFetchProducts = () => {
             _order: createdAt,
           }
         : {}),
+      ...pagination,
     }
-  }, [params])
+  }, [params, pagination])
 
   const fetchProducts = useCallback(async () => {
     setLoading(true)
@@ -43,17 +47,26 @@ const useFetchProducts = () => {
     }
   }, [mapperParams])
 
+  const onChangeOffset = (perPage: string) => {
+    setPagination({ ...pagination, _limit: perPage })
+  }
+
+  const onLoadmore = (perPage: number) => {
+    setPagination({
+      ...pagination,
+      _limit: (Number(pagination._limit) + perPage).toString(),
+    })
+  }
   useEffect(() => {
-    if (Object.keys(params)?.length === 0) {
-      navigate(`${routeString.PRODUCT.root}?${onGetDefaultPaging({})}`)
-      return
-    }
     fetchProducts()
   }, [fetchProducts])
 
   return {
     products,
     loading,
+    onChangeOffset,
+    onLoadmore,
+    pagination,
   }
 }
 
